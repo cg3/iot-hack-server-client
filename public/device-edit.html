@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IOT GO</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+  <header class="app-header">
+    <h1 class="branding"><a href="index.html">IOT GO</a></h1>
+  </header>
+
+  <div class="main-container">
+    <div class="device-edit-container">
+      <div class="card">
+        <label>Device name</label>
+        <input type="text" value="Box one">
+      </div>
+
+      <div class="card">
+        <label>Device Location</label>
+        <input type="text" value="IOT Expo fire escape">
+      </div>
+
+      <ul class="sensor-list">
+        <li class="sensor-item card clearfix">
+          <h4 class="sensor-name">Light sensor</h4>
+          <span onclick="toggleSwitch(this)" class="toggle inactive"></span>
+        </li>
+
+        <li class="sensor-item card clearfix">
+          <h4 class="sensor-name">Sound sensor</h4>
+          <span onclick="toggleSwitch(this)" class="toggle inactive"></span>
+        </li>
+
+        <li class="sensor-item card clearfix">
+          <h4 class="sensor-name">Temperature sensor</h4>
+          <span onclick="toggleSwitch(this)" class="toggle inactive"></span>
+        </li>
+
+        <li class="sensor-item card clearfix">
+          <h4 class="sensor-name">Vibration sensor</h4>
+          <span onclick="toggleSwitch(this)" class="toggle inactive"></span>
+        </li>
+
+        <li class="sensor-item card clearfix">
+          <h4 class="sensor-name">Accelerometer</h4>
+          <span onclick="toggleSwitch(this)" class="toggle inactive"></span>
+        </li>
+      </ul>
+
+      <a href="device-view.html" class="btn btn-full-width">Close</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleSwitch(elm) {
+      var className = elm.getAttribute("class")
+
+      if (className = "toggle inactive") {
+        elm.className = "toggle active"
+      } else {
+        elm.className = "toggle inactive"
+      }
+    }
+  </script>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var data = null;
+
+    var socket = io();
+
+    socket.on('data', function(d) {
+      data = d;
+
+      // document.write(JSON.stringify(data));
+    });
+  </script>
+
+</body>
+</html>

@@ -296,7 +296,7 @@ label {
 }
 
 /* line 30, /Users/Mark/repos/iot-hack-server-client/src/sass/_type.scss */
-button, .btn {
+.btn {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -310,16 +310,76 @@ button, .btn {
   -webkit-transition: background-color .35s;
   transition: background-color .35s;
   margin: 0;
+  text-decoration: none;
+  display: block;
 }
 
-/* line 42, /Users/Mark/repos/iot-hack-server-client/src/sass/_type.scss */
-button:hover, .btn:hover {
+/* line 44, /Users/Mark/repos/iot-hack-server-client/src/sass/_type.scss */
+.btn:hover {
   background-color: #004d87;
 }
 
-/* line 46, /Users/Mark/repos/iot-hack-server-client/src/sass/_type.scss */
-button:focus, .btn:focus {
+/* line 48, /Users/Mark/repos/iot-hack-server-client/src/sass/_type.scss */
+.btn:focus {
   outline: none;
+}
+
+/* line 53, /Users/Mark/repos/iot-hack-server-client/src/sass/_type.scss */
+.btn-full-width {
+  width: 100%;
+  margin-bottom: .5rem;
+  text-align: center;
+}
+
+/* line 59, /Users/Mark/repos/iot-hack-server-client/src/sass/_type.scss */
+.toggle {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  border-width: .2rem;
+  border-style: solid;
+  width: 4rem;
+  height: 2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  -webkit-transition: border-color .15s ease-in-out;
+  transition: border-color .15s ease-in-out;
+}
+
+/* line 71, /Users/Mark/repos/iot-hack-server-client/src/sass/_type.scss */
+.toggle::before {
+  content: "";
+  position: absolute;
+  top: .1rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  -webkit-transition: background-color .15s ease-in-out, left .15s ease-in-out;
+  transition: background-color .15s ease-in-out, left .15s ease-in-out;
+}
+
+/* line 81, /Users/Mark/repos/iot-hack-server-client/src/sass/_type.scss */
+.toggle.inactive {
+  border-color: #52697a;
+}
+
+/* line 84, /Users/Mark/repos/iot-hack-server-client/src/sass/_type.scss */
+.toggle.inactive::before {
+  background-color: #52697a;
+  left: .2rem;
+}
+
+/* line 90, /Users/Mark/repos/iot-hack-server-client/src/sass/_type.scss */
+.toggle.active {
+  border-color: #0071c7;
+}
+
+/* line 93, /Users/Mark/repos/iot-hack-server-client/src/sass/_type.scss */
+.toggle.active::before {
+  background-color: #0071c7;
+  left: 2.1rem;
 }
 
 /* line 5, /Users/Mark/repos/iot-hack-server-client/src/sass/_layout.scss */
@@ -387,9 +447,10 @@ ul {
   position: fixed;
   width: 100%;
   top: 0;
+  z-index: 1;
 }
 
-/* line 11, /Users/Mark/repos/iot-hack-server-client/src/sass/_header.scss */
+/* line 12, /Users/Mark/repos/iot-hack-server-client/src/sass/_header.scss */
 .branding {
   margin: 0 auto;
   padding: .25em 1rem;
@@ -398,13 +459,13 @@ ul {
   letter-spacing: 0.25rem;
 }
 
-/* line 18, /Users/Mark/repos/iot-hack-server-client/src/sass/_header.scss */
+/* line 19, /Users/Mark/repos/iot-hack-server-client/src/sass/_header.scss */
 .branding a {
   color: white;
   text-decoration: none;
 }
 
-/* line 22, /Users/Mark/repos/iot-hack-server-client/src/sass/_header.scss */
+/* line 23, /Users/Mark/repos/iot-hack-server-client/src/sass/_header.scss */
 .branding a:hover {
   opacity: .9;
 }
@@ -430,13 +491,7 @@ ul {
   font-size: 2rem;
 }
 
-/* line 8, /Users/Mark/repos/iot-hack-server-client/src/sass/_device-view.scss */
-.edit-device-btn {
-  width: 100%;
-  margin-bottom: .5rem;
-}
-
-/* line 17, /Users/Mark/repos/iot-hack-server-client/src/sass/_device-view.scss */
+/* line 12, /Users/Mark/repos/iot-hack-server-client/src/sass/_device-view.scss */
 .sensor-value-container {
   background-color: #66aadd;
   color: white;
@@ -449,19 +504,19 @@ ul {
   float: left;
 }
 
-/* line 27, /Users/Mark/repos/iot-hack-server-client/src/sass/_device-view.scss */
+/* line 22, /Users/Mark/repos/iot-hack-server-client/src/sass/_device-view.scss */
 .sensor-value-container label,
 .sensor-value-container span {
   display: block;
 }
 
-/* line 32, /Users/Mark/repos/iot-hack-server-client/src/sass/_device-view.scss */
+/* line 27, /Users/Mark/repos/iot-hack-server-client/src/sass/_device-view.scss */
 .sensor-value-container span {
   font-weight: 700;
   font-size: 1.4rem;
 }
 
-/* line 38, /Users/Mark/repos/iot-hack-server-client/src/sass/_device-view.scss */
+/* line 33, /Users/Mark/repos/iot-hack-server-client/src/sass/_device-view.scss */
 .sensor-readout-graph {
   width: 70%;
   border: 0.2rem solid #66aadd;
@@ -470,4 +525,39 @@ ul {
   border-radius: .15rem;
   margin-top: .5rem;
   margin-left: .5rem;
+}
+
+/* line 4, /Users/Mark/repos/iot-hack-server-client/src/sass/_device-edit.scss */
+.sensor-list .sensor-name {
+  width: -webkit-calc(100% - 6rem);
+  width: calc(100% - 6rem);
+  float: left;
+  font-size: 1.4rem;
+}
+
+/* line 10, /Users/Mark/repos/iot-hack-server-client/src/sass/_device-edit.scss */
+.sensor-list .toggle {
+  float: right;
+}
+
+/* line 14, /Users/Mark/repos/iot-hack-server-client/src/sass/_device-edit.scss */
+.device-edit-container input {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a364d;
+  background-color: white;
+  width: 100%;
+  border: 0.15rem solid #80b8e3;
+  border-radius: .2rem;
+  padding: .5rem;
+  -webkit-transition: background-color .25s ease-in-out, border-color .25s ease-in-out;
+  transition: background-color .25s ease-in-out, border-color .25s ease-in-out;
+}
+
+/* line 26, /Users/Mark/repos/iot-hack-server-client/src/sass/_device-edit.scss */
+.device-edit-container input:focus {
+  outline: none;
+  border-color: #0071c7;
+  background-color: #f5f9fd;
 }
