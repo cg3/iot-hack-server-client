@@ -37,8 +37,13 @@ button, .btn {
   padding: .4rem .8rem .3rem;
   border-radius: .2rem;
   transition: background-color .35s;
+  margin: 0;
 
   &:hover {
     background-color: mix(black, $primary, 32);
+  }
+
+  &:focus {
+    outline: none;
   }
 }
