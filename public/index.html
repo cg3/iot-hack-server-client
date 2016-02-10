@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>pebble {code}</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://hpneo.github.io/gmaps/styles.css">
+</head>
+<body>
+  <h2> pebble {code} IoT hackathon</h2>
+  <div id="map"></div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="gmap.js"></script>
+  <script>
+    var data = null;
+
+    var socket = io();
+
+    socket.on('data', function(d) {
+      data = d;
+
+      document.write(JSON.stringify(data));
+    });
+
+  </script>
+
+</body>
+</html>
