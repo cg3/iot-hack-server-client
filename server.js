@@ -31,6 +31,16 @@ server.register(require('inert'), () => {
   });
 
   server.route({
+    method: 'POST',
+    path: '/data',
+    handler: function (request, reply) {
+      reply();
+      data = request.payload;
+      io.sockets.emit('data', data);
+    }
+  });
+
+  server.route({
     method: 'GET',
     path: '/data',
     handler: function (request, reply) {
