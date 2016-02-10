@@ -477,11 +477,11 @@ ul {
 
 /* line 12, /Users/Mark/repos/iot-hack-server-client/src/sass/_device-list.scss */
 .device-img {
-  width: 10vw;
   height: 14vw;
+  background-color: #ebf0f4;
 }
 
-/* line 17, /Users/Mark/repos/iot-hack-server-client/src/sass/_device-list.scss */
+/* line 18, /Users/Mark/repos/iot-hack-server-client/src/sass/_device-list.scss */
 .device-name {
   margin: 0;
 }
