@@ -21,10 +21,10 @@ var data = null;
 
 server.register(require('inert'), () => { 
   server.route({
-    method: 'POST',
-    path: '/data',
+    method: 'GET',
+    path: '/adddata',
     handler: function (request, reply) {
-      data = request.payload;
+      data = request.query;
       io.sockets.emit('data', data);
       reply();
     }
