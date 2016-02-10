@@ -1,0 +1,31 @@
+//===============================================================================
+// DEVICE EDIT
+//===============================================================================
+.sensor-list .sensor-name {
+  width: calc(100% - 6rem);
+  float: left;
+  font-size: 1.4rem;
+}
+
+.sensor-list .toggle {
+  float: right;
+}
+
+.device-edit-container input {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: $ink-bold;
+  background-color: white;
+  width: 100%;
+  border: .15rem solid mix(white, $primary, 50);
+  border-radius: .2rem;
+  padding: .5rem;
+  transition: background-color .25s ease-in-out, border-color .25s ease-in-out;
+
+  &:focus {
+    outline: none;
+    border-color: $primary;
+    background-color: mix(white, $primary, 96);
+  }
+}

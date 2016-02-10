@@ -1,0 +1,98 @@
+//===============================================================================
+// TYPE
+//===============================================================================
+html,
+body {
+  background-color: $paper;
+  color: $ink;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6,
+strong, b {
+  color: $ink-bold;
+  font-weight: 700;
+}
+
+a {
+  color: $primary;
+}
+
+label {
+  font-size: .8rem;
+}
+
+.btn {
+  @include appearance;
+  background-color: $primary;
+  font-weight: 700;
+  color: white;
+  font-size: 1.2rem;
+  border: 0;
+  padding: .4rem .8rem .3rem;
+  border-radius: .2rem;
+  transition: background-color .35s;
+  margin: 0;
+  text-decoration: none;
+  display: block;
+
+  &:hover {
+    background-color: mix(black, $primary, 32);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn-full-width {
+  width: 100%;
+  margin-bottom: .5rem;
+  text-align: center;
+}
+
+.toggle {
+  @include appearance;
+  display: inline-block;
+  position: relative;
+  border-width: .2rem;
+  border-style: solid;
+  width: 4rem;
+  height: 2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: border-color .15s ease-in-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: .1rem;
+    width: 2rem - .6rem;
+    height: 2rem - .6rem;
+    border-radius: 50%;
+    transition: background-color .15s ease-in-out, left .15s ease-in-out;
+  }
+
+  &.inactive {
+    border-color: $ink;
+
+    &::before {
+      background-color: $ink;
+      left: .2rem;
+    }
+  }
+
+  &.active {
+    border-color: $primary;
+
+    &::before {
+      background-color: $primary;
+      left: 2.1rem;
+    }
+  }
+}

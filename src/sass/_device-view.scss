@@ -1,0 +1,41 @@
+//===============================================================================
+// DEVICE VIEW
+//===============================================================================
+.device-view-container h2 {
+  font-size: 2rem;
+}
+
+.sensor-readout {
+
+}
+
+.sensor-value-container {
+  background-color: mix(white, $primary, 40);
+  color: white;
+  width: calc(30% - .5rem);
+  border-radius: .15rem;
+  text-align: center;
+  margin-top: .5rem;
+  padding: .25rem;
+  float: left;
+
+  label,
+  span {
+    display: block;
+  }
+
+  span {
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+}
+
+.sensor-readout-graph {
+  width: 70%;
+  border: .2rem solid mix(white, $primary, 40);
+  height: 5rem;
+  float: left;
+  border-radius: .15rem;
+  margin-top: .5rem;
+  margin-left: .5rem;
+}

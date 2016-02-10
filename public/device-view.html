@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IOT GO</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+  <header class="app-header">
+    <h1 class="branding"><a href="index.html">IOT GO</a></h1>
+  </header>
+
+  <div class="main-container">
+    <div class="device-view-container">
+      <div class="card">
+        <label>Device name</label>
+        <h2>Box one</h2>
+      </div>
+
+      <div class="card">
+        <label>Device Location</label>
+        <h2>IOT Expo fire escape</h2>
+      </div>
+
+      <a href="device-edit.html" class="btn btn-full-width">Edit Device settings</a>
+
+      <ul class="sensor-list">
+        <li class="sensor-item card">
+          <label>Light sensor</label>
+          <div class="sensor-readout clearfix">
+            <div class="sensor-value-container">
+              <label>LUX</label>
+              <span>59</span>
+            </div>
+            <div class="sensor-readout-graph"></div>
+          </div>
+        </li>
+
+        <li class="sensor-item card">
+          <label>Sound sensor</label>
+          <div class="sensor-readout clearfix">
+            <div class="sensor-value-container">
+              <label>DB</label>
+              <span>48</span>
+            </div>
+            <div class="sensor-readout-graph"></div>
+          </div>
+        </li>
+
+        <li class="sensor-item card">
+          <label>Temperature sensor</label>
+          <div class="sensor-readout clearfix">
+            <div class="sensor-value-container">
+              <label>&deg; C</label>
+              <span>23</span>
+            </div>
+            <div class="sensor-readout-graph"></div>
+          </div>
+        </li>
+
+        <li class="sensor-item card">
+          <label>Vibration sensor</label>
+          <div class="sensor-readout clearfix">
+            <div class="sensor-value-container">
+              <label>G</label>
+              <span>0.124</span>
+            </div>
+            <div class="sensor-readout-graph"></div>
+          </div>
+        </li>
+
+        <li class="sensor-item card">
+          <label>Accelerometer</label>
+          <div class="sensor-readout clearfix">
+            <div class="sensor-value-container">
+              <label>XYZ</label>
+              <span>0.4, 0.2, 0.6</span>
+            </div>
+            <div class="sensor-readout-graph"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var data = null;
+
+    var socket = io();
+
+    socket.on('data', function(d) {
+      data = d;
+
+      // document.write(JSON.stringify(data));
+    });
+  </script>
+
+</body>
+</html>

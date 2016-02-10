@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>pebble {code}</title>
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<link rel="stylesheet" href="https://hpneo.github.io/gmaps/styles.css">
+  <title>IOT GO</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
-  <h2> pebble {code} IoT hackathon</h2>
-  <div id="map"></div>
+
+  <header class="app-header">
+    <h1 class="branding"><a href="index.html">IOT GO</a></h1>
+  </header>
+
+  <div class="main-container">
+    <ul class="device-list clearfix">
+      <li class="device-item card two-col">
+        <img class="device-img" src="">
+        <h4 class="device-name"><a href="device-view.html">Box one</a></h4>
+      </li>
+
+      <li class="device-item card two-col">
+        <img class="device-img" src="">
+        <h4 class="device-name"><a href="device-view.html">Box two</a></h4>
+      </li>
+
+      <li class="device-item card two-col">
+        <img class="device-img" src="">
+        <h4 class="device-name"><a href="device-view.html">Box three</a></h4>
+      </li>
+
+      <li class="device-item card two-col">
+        <img class="device-img" src="">
+        <h4 class="device-name"><a href="device-view.html">Box four</a></h4>
+      </li>
+    </ul>
+  </div>
+
+
+
+
   <script src="/socket.io/socket.io.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="gmap.js"></script>
   <script>
     var data = null;
 
@@ -21,9 +49,8 @@
     socket.on('data', function(d) {
       data = d;
 
-      document.write(JSON.stringify(data));
+      // document.write(JSON.stringify(data));
     });
-
   </script>
 
 </body>

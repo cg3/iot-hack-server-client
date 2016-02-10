@@ -1,0 +1,27 @@
+//===============================================================================
+// HEADER
+//===============================================================================
+.app-header {
+  background-color: $primary;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+.branding {
+  margin: 0 auto;
+  padding: .25em 1rem;
+  max-width: $grid-max;
+  font-weight: 900;
+  letter-spacing: 0.25rem;
+
+  a {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      opacity: .9;
+    }
+  }
+}

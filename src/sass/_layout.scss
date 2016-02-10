@@ -1,0 +1,49 @@
+//===============================================================================
+// LAYOUT
+//===============================================================================
+// box-sizing everywhere and webkit text rendering correction
+*,
+*::before,
+*:after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+// remove padding & list styles from all <ul> as default
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.main-container {
+  margin: 5rem auto;
+  padding: 0 1rem;
+  max-width: $grid-max;
+}
+
+.card {
+  background-color: white;
+  padding: .5rem;
+  margin: 0 0 .5rem;
+  border-radius: .2rem;
+  box-shadow: 0 .1rem .4rem rgba($primary, .05);
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.two-col {
+  width: calc(50% - .5rem);
+  float: left;
+  margin-bottom: 1rem;
+
+  &:nth-child(odd) {
+    margin-right: .5rem;
+  }
+
+  &:nth-child(even) {
+    margin-left: .5rem;
+  }
+}
