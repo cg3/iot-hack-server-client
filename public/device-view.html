@@ -33,7 +33,7 @@
           <div class="sensor-readout clearfix">
             <div class="sensor-value-container">
               <label>LUX</label>
-              <span>59</span>
+              <span class="1-light"></span>
             </div>
             <div class="sensor-readout-graph"></div>
           </div>
@@ -44,7 +44,7 @@
           <div class="sensor-readout clearfix">
             <div class="sensor-value-container">
               <label>DB</label>
-              <span>48</span>
+              <span class="1-sound">48</span>
             </div>
             <div class="sensor-readout-graph"></div>
           </div>
@@ -55,7 +55,7 @@
           <div class="sensor-readout clearfix">
             <div class="sensor-value-container">
               <label>&deg; C</label>
-              <span>23</span>
+              <span class="1-temperature"></span>
             </div>
             <div class="sensor-readout-graph"></div>
           </div>
@@ -66,7 +66,7 @@
           <div class="sensor-readout clearfix">
             <div class="sensor-value-container">
               <label>G</label>
-              <span>0.124</span>
+              <span class="1-vibrate"></span>
             </div>
             <div class="sensor-readout-graph"></div>
           </div>
@@ -77,7 +77,7 @@
           <div class="sensor-readout clearfix">
             <div class="sensor-value-container">
               <label>XYZ</label>
-              <span>0.4, 0.2, 0.6</span>
+              <span class="1-accelerometer"></span>
             </div>
             <div class="sensor-readout-graph"></div>
           </div>
@@ -89,16 +89,29 @@
 
 
   <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/jquery.min.js"></script>
   <script>
     var data = null;
 
     var socket = io();
+    $(function(){
+     socket.on('data', function(d) {
+        if (d) {
+          data = d;
+          $('.1-light').text(d.light);
+          $('.1-sound').text(d.sound);
+          $('.1-temperature').text(d.temperature);
+          $('.1-vibrate').text(d.vibration);
 
-    socket.on('data', function(d) {
-      data = d;
+          var xValue = d.accelerometer.x,
+              yValue = d.accelerometer.y,
+              zValue = d.accelerometer.z;
 
-      // document.write(JSON.stringify(data));
+          $('.1-accelerometer').text('X:' + xValue + 'Y:' + yValue + 'z:' + zValue);
+        }
+      });
     });
+   
   </script>
 
 </body>
