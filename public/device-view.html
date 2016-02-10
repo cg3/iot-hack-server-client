@@ -77,7 +77,9 @@
           <div class="sensor-readout clearfix">
             <div class="sensor-value-container">
               <label>XYZ</label>
-              <span class="1-accelerometer"></span>
+              <span class="1-accelerometer x-value"></span>
+              <span class="1-accelerometer y-value"></span>
+              <span class="1-accelerometer z-value"></span>
             </div>
             <div class="sensor-readout-graph"></div>
           </div>
@@ -88,12 +90,12 @@
 
 
 
-  <script src="/socket.io/socket.io.js"></script>
+  <script src="http://pebblecode-iot-hack.herokuapp.com/socket.io/socket.io.js"></script>
   <script src="/js/jquery.min.js"></script>
   <script>
     var data = null;
 
-    var socket = io();
+    var socket = io('pebblecode-iot-hack.herokuapp.com');
     $(function(){
      socket.on('data', function(d) {
         if (d) {
@@ -107,11 +109,13 @@
               yValue = d.accelerometer.y,
               zValue = d.accelerometer.z;
 
-          $('.1-accelerometer').text('X:' + xValue + 'Y:' + yValue + 'z:' + zValue);
+          $('.x-value').text(xValue);
+          $('.y-value').text(yValue);
+          $('.z-value').text(zValue);
         }
       });
     });
-   
+
   </script>
 
 </body>
