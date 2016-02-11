@@ -1,57 +1,13 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>IOT GO</title>
-
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="../css/styles.css">
-</head>
-
+  <title>IOT HAck</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/styles.css" rel="stylesheet"></head>
 <body>
+  <div id="root"></div>
+  <script src="//pebblecode-iot-hack.herokuapp.com/socket.io/socket.io.js"></script>
+<script src="/main.js"></script></body>
 
-  <header class="app-header">
-    <h1 class="branding"><a href="index.html">IOT GO</a></h1>
-  </header>
-
-  <div class="main-container">
-    <ul class="device-list clearfix">
-      <li class="device-item card two-col">
-        <img class="device-img" src="">
-        <h4 class="device-name"><a href="device-view.html">Box one</a></h4>
-      </li>
-
-      <li class="device-item card two-col">
-        <img class="device-img" src="">
-        <h4 class="device-name"><a href="device-view.html">Box two</a></h4>
-      </li>
-
-      <li class="device-item card two-col">
-        <img class="device-img" src="">
-        <h4 class="device-name"><a href="device-view.html">Box three</a></h4>
-      </li>
-
-      <li class="device-item card two-col">
-        <img class="device-img" src="">
-        <h4 class="device-name"><a href="device-view.html">Box four</a></h4>
-      </li>
-    </ul>
-  </div>
-
-
-
-
-  <script src="/socket.io/socket.io.js"></script>
-  <script>
-    var data = null;
-
-    var socket = io();
-
-    socket.on('data', function(d) {
-      data = d;
-
-      // document.write(JSON.stringify(data));
-    });
-  </script>
-
-</body>
 </html>
