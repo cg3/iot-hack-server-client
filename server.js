@@ -15,6 +15,11 @@ var io = require('socket.io')(server.listener);
 io.on('connection', function (socket) {
 
   socket.emit('data', data);
+
+  socket.on('reading', (data) => {
+    data = data;
+    io.sockets.emit('data', data);
+  });
 });
 
 var data = null;
